@@ -47,7 +47,7 @@ class InputHistoryTextFieldState extends State<InputHistoryTextField> {
           ._inputHistoryController
           .filterHistory(widget.textEditingController!.text);
     if (widget.textEditingController!.text != _lastSubmitValue &&
-        !widget.focusNode!.hasFocus) {
+        !widget.focusNode!.hasFocus && widget.enableSave) {
       //trigger _saveHistory on submit
       _saveHistory();
       _lastSubmitValue = widget.textEditingController!.text;
